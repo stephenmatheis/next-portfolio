@@ -1,15 +1,32 @@
-$blue: #9cdcfe;
-$blue-20: #9cdcfe;
-$dark-blue: #569cd6;
-$gold: #ffd700;
-$gray: #696969;
-$green: #6a9955;
-$light-blue: #4fc1ff;
-$lime: #4ec9b0;
-$lime-20: #4ec9b020;
-$orange: #ce9178;
-$pink: #da70d6;
-$dark-pink: #c586c0;
-$dark-pink-20: #c586c020;
-$yellow: #d7ba7d;
-$light-yellow: #dcdcaa;
+$skill: #9cdcfe;
+$skill-10: #9cdcfe10;
+$skill-20: #9cdcfe20;
+$heading: #569cd6;
+$title: #696969;
+$muted: #808080;
+$comment: #6a9955;
+$date: #b5cea8;
+$link: #4ec9b0;
+$link-20: #4ec9b020;
+$name: #c586c0;
+$name-20: #c586c020;
+$text: #ce9178;
+$company: #dcdcaa;
+
+// DEV: Simplify colors
+
+// $heading: var(--color);
+// $muted: var(--color);
+// $comment: var(--color);
+// $date: var(--color);
+// $link: var(--color);
+// $link-20: var(--color);
+// $name: var(--color);
+// $name-20: var(--color);
+// $company: var(--color);
+
+// $skill: var(--color);
+// $skill-10: var(--color);
+// $skill-20: var(--color);
+// $title: var(--color);
+// $text: var(--color);

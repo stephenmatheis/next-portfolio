@@ -7,6 +7,7 @@ $color: var(--color);
 
 .main {
     display: flex;
+    justify-content: space-between;
     gap: 4ch;
     opacity: 0;
 
@@ -20,10 +21,10 @@ $color: var(--color);
         .link-ctr {
 
             .link-text {
-                border-bottom-color: $lime;
+                border-bottom-color: $link;
 
                 &::before {
-                    background-color: $lime-20;
+                    background-color: $link-20;
                 }
             }
         }
@@ -56,7 +57,7 @@ $color: var(--color);
     }
 
     .comment {
-        color: $green;
+        color: $comment;
         margin-bottom: $line-height;
     }
 
@@ -68,10 +69,10 @@ $color: var(--color);
         }
 
         .title {
-            color: $dark-blue;
+            color: $heading;
 
             .company {
-                color: $light-yellow;
+                color: $company;
             }
         }
 
@@ -81,7 +82,7 @@ $color: var(--color);
 
             .line {
                 display: flex;
-                color: $orange;
+                color: $text;
             }
         }
     }
@@ -95,7 +96,7 @@ $color: var(--color);
 
             .group {
                 .name {
-                    color: $dark-blue;
+                    color: $heading;
                 }
 
                 .items-ctr {
@@ -106,28 +107,12 @@ $color: var(--color);
                     .item {
                         display: inline-block;
                         border-radius: 4px;
-                        color: $blue;
-                        // Badge style: OFF
-                        // padding: 0px 1ch;
-                        // background-color: $blue-20;
+                        color: $skill;
                     }
                 }
             }
         }
 
-    }
-
-    #education {
-        .college {
-            color: $dark-blue;
-        }
-
-        .major {
-            .date {
-                color: $blue;
-                ;
-            }
-        }
     }
 
     #contact {
@@ -136,36 +121,46 @@ $color: var(--color);
             flex-direction: column;
             white-space: nowrap;
             gap: $line-height;
+        }
+    }
 
-            a {
+    #projects {
+        .project-ctr {
+            display: flex;
+            flex-direction: column;
+            gap: $line-height;
 
-                &,
-                &:hover {
-                    color: $lime;
-                }
+            &:not(:last-child) {
+                margin-bottom: $line-height;
             }
-
         }
     }
 
     .date {
-        color: $blue;
+        color: $date;
 
         .location {
-            color: var(--color);
+            // color: var(--color);
+            color: $muted;
         }
     }
+
+    .emoji {
+        font-size: $line-height;
+        margin-right: 1ch;
+    }
+
 
     .link-ctr {
         height: $line-height;
 
         a {
             display: flex;
-        }
 
-        .emoji {
-            font-size: $line-height;
-            margin-right: 1ch;
+            &,
+            &:hover {
+                color: $link;
+            }
         }
 
         .link-text {
@@ -183,6 +178,7 @@ $color: var(--color);
 
             &::before {
                 content: '';
+                pointer-events: none;
                 position: absolute;
                 top: 6px;
                 left: 3px;

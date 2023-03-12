@@ -34,18 +34,18 @@ $color: var(--color);
         &.link-background {
 
             .name {
-                border-bottom-color: $dark-pink;
+                border-bottom-color: $name;
 
                 &::before {
-                    background-color: $dark-pink-20;
+                    background-color: $name-20;
                 }
             }
 
             .title {
-                border-bottom-color: $lime;
+                border-bottom-color: $link;
 
                 &::before {
-                    background-color: $lime-20;
+                    background-color: $link-20;
                 }
             }
         }
@@ -58,6 +58,7 @@ $color: var(--color);
 
             &::before {
                 content: '';
+                pointer-events: none;
                 position: absolute;
                 top: 6px;
                 left: 3px;
@@ -72,12 +73,12 @@ $color: var(--color);
         }
 
         .name {
-            color: #c586c0;
+            color: $name;
             border-bottom-color: transparent;
         }
 
         .title {
-            color: #4ec9b0;
+            color: $link;
             white-space: nowrap;
             border-bottom-color: transparent;
         }
@@ -143,6 +144,6 @@ $color: var(--color);
 
     .title {
         font-size: 12vmin;
-        color: $gray;
+        color: $title;
     }
 }
