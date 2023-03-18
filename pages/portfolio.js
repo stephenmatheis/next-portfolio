@@ -1,26 +1,18 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import Head from 'next/head';
+import { Space_Mono, Space_Grotesk } from 'next/font/google';
+import projects from '@/data/projects';
 import styles from '../styles/portfolio.module.scss';
+import classNames from 'classnames';
 
-export default function Home() {
-    const ctr = useRef();
+const spaceMono = Space_Mono({ weight: ['400', '700'], subsets: ['latin'] });
+const spaceGrotesk = Space_Grotesk({ weight: ['400', '700'], subsets: ['latin'] })
 
-    const firstName = 'Stephen';
-    const lastName = 'Matheis';
-    const frontEnd = 'Front-end';
-    const software = 'Software';
-    const engineer = 'Engineer';
-
-    const fromFirstName = useRef();
-    const fromLastName = useRef();
-    const fromFrontEnd = useRef();
-    const fromSoftware = useRef();
-    const fromEngineer = useRef();
-
+export default function Portfolio() {
     useEffect(() => {
         document.body.classList.remove('hidden');
-
-        return () => document.body.removeAttribute('style');
+        document.documentElement.style.setProperty('--background-color', '#0f0f0f');
+        document.documentElement.style.setProperty('--color', '#f0f0f0');
     }, []);
 
     return (
@@ -30,12 +22,23 @@ export default function Home() {
                 <meta name="description" content="Stephen Matheis" />
             </Head>
             <div id={styles['portfolio']}>
-                <div ref={ctr} className={styles['ctr']}>
-                    <span ref={fromFirstName} className={styles['name']}>{firstName}</span>
-                    <span ref={fromLastName} className={styles['name']}>{lastName}</span>
-                    <span ref={fromFrontEnd} className={styles['title']}>{frontEnd}</span>
-                    <span ref={fromSoftware} className={styles['title']}>{software}</span>
-                    <span ref={fromEngineer} className={styles['title']}>{engineer}</span>
+                <div className={styles['ctr']}>
+                    {projects.map(({ name, description }) => {
+                        return (
+                            <div key={name} className={styles['project']}>
+                                <h2
+                                    className={classNames(
+                                        styles['name'],
+                                        styles['paint-brush'],
+                                        spaceMono.className
+                                    )}
+                                >
+                                    {name}
+                                </h2>
+                                <div className={classNames(styles['description'], spaceGrotesk.className)}>{description}</div>
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
         </>
