@@ -1,9 +1,5 @@
-@import '../../styles/utilities.module.scss';
-@import '../../styles/dark.theme.module.scss';
-
-$font-size: var(--font-size);
-$line-height: var(--line-height);
-$color: var(--color);
+@use '../../styles/utilities.module.scss' as utilities;
+@use '../../styles/dark.theme.module.scss' as theme;
 
 .header {
     display: flex;
@@ -15,8 +11,8 @@ $color: var(--color);
     }
 
     .profile {
-        font-size: $font-size;
-        line-height: $line-height;
+        font-size: utilities.$font-size;
+        line-height: utilities.$line-height;
 
         &:hover {
 
@@ -34,18 +30,18 @@ $color: var(--color);
         &.link-background {
 
             .name {
-                border-bottom-color: $name;
+                border-bottom-color: theme.$name;
 
                 &::before {
-                    background-color: $name-20;
+                    background-color: theme.$name-20;
                 }
             }
 
             .title {
-                border-bottom-color: $link;
+                border-bottom-color: theme.$link;
 
                 &::before {
-                    background-color: $link-20;
+                    background-color: theme.$link-20;
                 }
             }
         }
@@ -73,15 +69,19 @@ $color: var(--color);
         }
 
         .name {
-            color: $name;
+            color: theme.$name;
             border-bottom-color: transparent;
         }
 
         .title {
-            color: $link;
+            color: theme.$link;
             white-space: nowrap;
             border-bottom-color: transparent;
         }
+    }
+
+    .nowrap {
+        white-space: nowrap;
     }
 }
 
@@ -102,7 +102,7 @@ $color: var(--color);
     z-index: 10;
 
     &.background-color {
-        background-color: var(--background-color);
+        background-color: utilities.$background;
     }
 
     @keyframes blink {
@@ -144,6 +144,6 @@ $color: var(--color);
 
     .title {
         font-size: 12vmin;
-        color: $title;
+        color: theme.$title;
     }
 }

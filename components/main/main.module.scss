@@ -1,9 +1,5 @@
-@import '../../styles/utilities.module.scss';
-@import '../../styles/dark.theme.module.scss';
-
-$font-size: var(--font-size);
-$line-height: var(--line-height);
-$color: var(--color);
+@use '../../styles/utilities.module.scss' as utilities;
+@use '../../styles/dark.theme.module.scss' as theme;
 
 .main {
     display: flex;
@@ -15,19 +11,8 @@ $color: var(--color);
         opacity: 0;
     }
 
-    &.link-background {
+    &.fade {
         animation: fade-in 450ms ease-in-out 0ms forwards;
-
-        .link-ctr {
-
-            .link-text {
-                border-bottom-color: $link;
-
-                &::before {
-                    background-color: $link-20;
-                }
-            }
-        }
     }
 
     @keyframes fade-in {
@@ -41,38 +26,38 @@ $color: var(--color);
     }
 
     * {
-        font-size: $font-size;
-        line-height: $line-height;
+        font-size: utilities.$font-size;
+        line-height: utilities.$line-height;
     }
 
     .right {
         display: flex;
         flex-direction: column;
-        gap: calc($line-height * 2);
+        gap: calc(utilities.$line-height * 2);
         max-width: 34ch;
     }
 
     .ctr:not(:only-child) {
-        margin-bottom: $line-height;
+        margin-bottom: utilities.$line-height;
     }
 
     .comment {
-        color: $comment;
-        margin-bottom: $line-height;
+        color: theme.$comment;
+        margin-bottom: utilities.$line-height;
     }
 
     .job {
         break-inside: avoid;
 
         &:not(:last-child) {
-            margin-bottom: $line-height;
+            margin-bottom: utilities.$line-height;
         }
 
         .title {
-            color: $heading;
+            color: theme.$heading;
 
             .company {
-                color: $company;
+                color: theme.$company;
             }
         }
 
@@ -82,7 +67,7 @@ $color: var(--color);
 
             .line {
                 display: flex;
-                color: $text;
+                color: theme.$text;
             }
         }
     }
@@ -92,11 +77,11 @@ $color: var(--color);
         .groups-ctr {
             display: flex;
             flex-direction: column;
-            gap: $line-height;
+            gap: utilities.$line-height;
 
             .group {
                 .name {
-                    color: $heading;
+                    color: theme.$heading;
                 }
 
                 .items-ctr {
@@ -107,7 +92,7 @@ $color: var(--color);
                     .item {
                         display: inline-block;
                         border-radius: 4px;
-                        color: $skill;
+                        color: theme.$skill;
                     }
                 }
             }
@@ -120,7 +105,7 @@ $color: var(--color);
             display: flex;
             flex-direction: column;
             white-space: nowrap;
-            gap: $line-height;
+            gap: utilities.$line-height;
         }
     }
 
@@ -128,68 +113,19 @@ $color: var(--color);
         .project-ctr {
             display: flex;
             flex-direction: column;
-            gap: $line-height;
+            gap: utilities.$line-height;
 
             &:not(:last-child) {
-                margin-bottom: $line-height;
+                margin-bottom: utilities.$line-height;
             }
         }
     }
 
     .date {
-        color: $date;
+        color: theme.$date;
 
         .location {
-            // color: var(--color);
-            color: $muted;
-        }
-    }
-
-    .emoji {
-        font-size: $line-height;
-        margin-right: 1ch;
-    }
-
-
-    .link-ctr {
-        height: $line-height;
-
-        a {
-            display: flex;
-
-            &,
-            &:hover {
-                color: $link;
-            }
-        }
-
-        .link-text {
-            position: relative;
-            border-bottom: solid 1px;
-            border-bottom-color: transparent;
-            transition: border-bottom-color 450ms ease-in-out;
-
-            &:hover {
-                &::before {
-                    top: 0px;
-                    left: 0px;
-                }
-            }
-
-            &::before {
-                content: '';
-                pointer-events: none;
-                position: absolute;
-                top: 6px;
-                left: 3px;
-                width: 100%;
-                height: 100%;
-                background-color: transparent;
-                transition:
-                    background-color 450ms ease-in-out,
-                    top 250ms ease-in-out,
-                    left 250ms ease-in-out;
-            }
+            color: theme.$muted;
         }
     }
 
@@ -210,7 +146,7 @@ $color: var(--color);
         // set to `fit-content`.
         @media (max-width: 911px) {
             flex-direction: column;
-            gap: calc($line-height * 2);
+            gap: calc(utilities.$line-height * 2);
 
             .right {
                 max-width: unset;
