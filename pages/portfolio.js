@@ -30,7 +30,8 @@ export default function Portfolio() {
                                     className={classNames(
                                         styles['name'],
                                         styles['paint-brush'],
-                                        spaceMono.className
+                                        spaceMono.className,
+                                        // spaceGrotesk.className
                                     )}
                                 >
                                     {name}
